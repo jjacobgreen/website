@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Set up CSS styles -->
+
+<head>
+  <title>masters</title>
+  <link type="text/css" rel="stylesheet" href="styles.css">
+  <!-- <script src="libraries/pdf.js"></script> -->
+  <!-- <script src="libraries/pdfjs-2.4.456-dist/build/pdf.js"></script> -->
+  <!-- <script src="simple.js"></script> -->
+  <!-- Sets initial zoom upon loading to match device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body class="subpage">
+
+  <!-- Name pixel art -->
+  <div style="text-align:center;">
+    <a href="index.html">
+      <img src="images/name_final_horizontal.svg" alt="JACOB GREEN" class="subpage_heading">
+    </a>
+  </div>
+
+  <!-- Navigation -->
+  <div class="topnav">
+    <ul class="topnav">
+      <li><a class="topnav inactive" href="about.html">about</a></li>
+      <li><a class="topnav inactive" href="projects.html">projects</a></li>
+      <li><a class="topnav active" href="masters.html">master's thesis</a></li>
+      <li><a class="topnav inactive" href="contact.html">contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Body text -->
+  <h1 class="subpage">master's thesis</h1>
+  <p class="subpage">Here you can find both a worded summary and a poster-style summary of my 4th year master's thesis, entitled: <b>Robotic Touch: A Unified Representation for Geometric and Mechanical Properties of Objects</b>. You can jump to the
+    poster summary <a href="#poster">here</a>.</p>
+
+  <h2>intro</h2>
+  <p class="subpage">My thesis concerned the topic of robotic touch, and how it can be used to determine both geometric and mechanical properties of objects.</p>
+
+  <p class="subpage">Identification of objects using both vision and touch is something that humans do almost unconsciously all the time. In robotics, however, objects are usually identified only using vision, which isn’t always possible. Robots can
+    also learn a lot
+    about what an object is and how they can manipulate it through properties that are only discoverable by touch. We focused on object stiffness and aimed to estimate the stiffness of objects and classify them using robotic touch.</p>
+
+  <h2>hardware and experiments</h2>
+  <p class="subpage">To do this, we used a robotic arm and a tactile sensor (skin), which we integrated by creating a software architecture that allowed us to control the arm and the gripper using feedback from the skin. We ran experiments on five
+    test objects,
+    squeezing them incrementally to gather data about the force that the skin experienced as well as how tightly the gripper was compressing the object.</p>
+
+  <p class="subpage">To find the stiffness and classify the objects accordingly, we used two different approaches.</p>
+
+  <h2>model-based approach</h2>
+  <p class="subpage">Firstly, a model-based approach that modelled the object that was grasped as a series of springs using Hooke’s Law. Some simplifying assumptions about the behaviour of the object and sensor resulted in a linear modelling equation
+    for the
+    stiffness at each taxel (tactile element). We then filtered the data to remove unreliable taxels and dynamic points that were unaccounted for by our static model, and fit a linear regression to a taxel response-gripper displacement plot. The
+    gradient of this line was used as our stiffness measurement at that taxel (local). The overall (global) stiffness of the object was taken as the mean local estimate of all taxels. The local estimates were also used to create an augmented point
+    cloud that encoded both geometric and stiffness information about the object. Two forms of interpolation were applied to estimate the stiffness at points not covered by a taxel.</p>
+
+  <h2>machine learning-based approach</h2>
+  <p class="subpage">Our second approach used several machine learning algorithms that trained models to classify objects using a single snapshot of haptic information (taxel responses and gripper width) from an instance in time. Three supervised
+    algorithms were
+    used: Random Forests, K-Nearest Neighbours and Support Vector Machines. One unsupervised algorithm, K-Means Clustering was also applied. To reduce the complexity of our data, Principal Component Analysis projection was used to project our
+    79-dimensional feature space onto three principal axes, allowing the data to be plotted in 3D. Random Forests were seen to perform the best, achieving up to 100% accuracy on our test set.</p>
+
+  <h2>conclusion</h2>
+  <p class="subpage">We presented two accurate approaches to identify the stiffness of objects using squeeze-based haptic data, as well a way to display unified geometric and stiffness information as an augmented point cloud. A model-based approach
+    may be more
+    applicable to previously unseen objects, while a machine learning approach can be used for rapid object classification. </p>
+
+  <div id="poster">
+    <embed src="http://example.com/the.pdf" width="500" height="375" />
+  </div>
+
+  <!-- Copyright Footer -->
+  <footer>
+    <p class="subpage">&copy; Jacob Green 2020</p>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+:root {
+  /* --main-bg: #fff9fd;
+  --main-blue: #3f51b5;
+  --main-green: #f44336;
+  --main-bg: #CDF3EE; */
+
+  /* --main-bg: #FFFFF2; */
+  /* --main-blue: #407899;
+  --main-green: #249485; */
+
+  --main-bg: #fefce3;
+  --main-blue: #0392cf;
+  --main-green: #7bc043;
+  --transparent-bg: rgba(255, 255, 255, 0);
+  --min-screen-size: 400px
+}
+
+body.landing {
+  background-color: var(--main-bg);
+  font-family: Trebuchet MS;
+  text-align: center;
+}
+
+body.subpage {
+  background-color: var(--main-bg);
+  font-family: Trebuchet MS;
+  padding: calc(10px + 1vw);
+}
+
+/* When less than 400px */
+img.main_heading_horizontal {
+  display: none;
+  /* padding-top: 20px */
+}
+
+img.main_heading_vertical {
+  width: 80%;
+  height: 160px;
+  min-width: 200px;
+  max-width: 300px;
+  display: inline;
+  padding-top: 20px
+}
+
+/* When wider than 400px */
+@media only screen and (min-width: 400px) {
+  img.main_heading_horizontal {
+    width: 80%;
+    height: 120px;
+    min-width: 380px;
+    max-width: 700px;
+    display: inline;
+    /* padding-top: 20px */
+  }
+  img.main_heading_vertical {
+    display: none;
+  }
+}
+
+/* When less than 400px */
+img.subpage_heading {
+  width: 80%;
+  height: 60px;
+  min-width: 200px;
+  max-width: 420px;
+}
+
+h1.subpage {
+  color: var(--main-green);
+}
+
+h2 {
+  color: var(--main-green);
+}
+
+p.landing {
+  color: var(--main-green);
+}
+
+p.subpage {
+  color: var(--main-blue);
+  /* font-size: calc(10px + 1vw) */
+  font-size: 12px
+}
+
+@media screen and (min-width: 400px) {
+  p.subpage {
+    font-size: calc(12px + 0.5vw);
+  }
+}
+
+footer.subpage {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--transparent-bg);
+  color: var(--main-green);
+  text-align: center;
+  font-size: 12px;
+}
+
+footer.subpage {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--main-bg);
+  color: var(--main-green);
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Unordered list style for vertical navigation bar */
+.midnav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  line-height: 500%
+}
+
+/* Hyperlinked undordered list elements for vertical navigation bar */
+.midnav li a {
+  display: inline;
+  color: var(--main-blue);
+  text-decoration: none;
+  font-size: 40px
+  /* font-size: calc(20px + 1vw) */
+}
+
+/* Unordered list style for horizontal navigation bar */
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  ;
+}
+
+/* Hyperlinked undordered list elements for horizontal navigation bar */
+li a.topnav {
+  display: inline;
+  color: var(--main-blue);
+  text-decoration: none;
+  font-size: 20px;
+  float: left;
+  padding: 15px;
+}
+
+/* Active class for horizontal navigation bar */
+.topnav li a.active {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+/* Hover option for above */
+li a:hover.topnav.inactive {
+  /* background-color: #555; */
+  color: var(--main-green);
+  /* text-decoration: underline; */
+}
+
+li a:hover.topnav.active {
+  text-decoration: underline;
+  color: var(--main-blue);
+}
+
+li a:hover {
+  text-decoration: underline;
+  color: var(--main-green);
+}
+
+p a {
+  display: inline;
+  color: var(--main-blue);
+  text-decoration: underline;
+}
+
+p a:hover {
+  display: inline;
+  color: var(--main-green);
+  text-decoration: underline;
+}
+
+/* Just to show div boxes */
+/* div {
+    outline: 2px solid red;
+} */
