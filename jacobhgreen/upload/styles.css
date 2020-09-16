@@ -25,6 +25,8 @@ body.subpage {
   background-color: var(--main-bg);
   font-family: Trebuchet MS;
   padding: calc(10px + 1vw);
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* When less than 400px */
@@ -85,13 +87,15 @@ p.landing {
 p.subpage {
   color: var(--main-blue);
   /* font-size: calc(10px + 1vw) */
-  font-size: 14px
+  font-size: 16px;
+  line-height: 1.4;
 }
 
 @media screen and (min-width: 400px) {
   p.subpage {
     color: var(--main-blue);
     font-size: calc(12px + 0.5vw);
+    line-height: 1.4;
   }
 }
 
