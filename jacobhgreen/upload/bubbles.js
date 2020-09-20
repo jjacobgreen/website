@@ -53,8 +53,8 @@ class Bubble {
     // this.vy = random(-1, -2);
     this.vy = -0.5;
 
-    this.img = loadImage("http://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/images/bubble_green.svg");
-    this.img_popping = loadImage("http://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/images/explosion_green.svg");
+    this.img = loadImage("https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/images/bubble_green.svg");
+    this.img_popping = loadImage("https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/images/explosion_green.svg");
     // this.img_popping = loadImage('images/popping.svg');
     // this.img_popping = loadImage('images/popping.svg');
 

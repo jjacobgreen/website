@@ -3,11 +3,9 @@
   --main-blue: #3f51b5;
   --main-green: #f44336;
   --main-bg: #CDF3EE; */
-
   /* --main-bg: #FFFFF2; */
   /* --main-blue: #407899;
   --main-green: #249485; */
-
   --main-bg: #fefce3;
   --main-blue: #0392cf;
   --main-green: #7bc043;
@@ -54,6 +52,7 @@ img.main_heading_vertical {
     display: inline;
     /* padding-top: 20px */
   }
+
   img.main_heading_vertical {
     display: none;
   }
@@ -82,6 +81,7 @@ h3 {
 
 p.landing {
   color: var(--main-green);
+  /* font-size: calc(20px + 1vw); */
 }
 
 p.subpage {
@@ -126,7 +126,16 @@ footer.subpage {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  line-height: 500%
+  line-height: 300%
+}
+
+@media screen and (min-width: 400px) {
+  .midnav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    line-height: 500%
+  }
 }
 
 /* Hyperlinked undordered list elements for vertical navigation bar */
@@ -134,8 +143,9 @@ footer.subpage {
   display: inline;
   color: var(--main-blue);
   text-decoration: none;
-  font-size: 40px
-  /* font-size: calc(20px + 1vw) */
+  /* font-size: 40px */
+  font-size: calc(20px + 2vw);
+  /* font-size: 4px; */
 }
 
 /* Unordered list style for horizontal navigation bar */
