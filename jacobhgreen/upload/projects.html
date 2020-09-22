@@ -15,24 +15,14 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-  <!-- Rocket Golf -->
-  <script src="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/rocket_golf/rocket_golf.js"></script>
-  <script src="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/rocket_golf/rocket.js"></script>
-  <script src="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/rocket_golf/hole.js"></script>
-  <script src="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/rocket_golf/planet.js"></script>
-  <script src="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/rocket_golf/star.js"></script>
-  <script src="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/rocket_golf/hud.js"></script>
-
-  <!-- Supershapes -->
-  <!-- <script src="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/supershape/supershape.js"></script> -->
+  <script src="https://kit.fontawesome.com/21ae3664d8.js" crossorigin="anonymous"></script>
 </head>
 
 
 <body class="subpage">
 
   <!-- Name pixel art -->
-  <div style="text-align:center;">
+  <div style="text-align: center;">
     <a href="https://www.jacobhgreen.com">
       <img src="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/images/name_final_horizontal.svg" alt="JACOB GREEN" class="subpage_heading">
     </a>
@@ -49,31 +39,27 @@
   </div>
 
   <!-- Body text -->
-  <div style="padding-bottom: 10px">
+  <div style="padding-bottom: 20px">
     <h1 class="subpage">projects</h1>
-    <p class="subpage">Here you can find some of the small personal projects that I have been working on recently. Those interactive on this page have been written in JavaScript using the <a href="https://p5js.org/">p5.js</a> framework. My Python-based
+    <p class="subpage">Here you can find some of the small personal projects that I have been working on recently. Those on this site have been written in JavaScript using the <a href="https://p5js.org/">p5.js</a> framework. My Python-based
       projects can be found on my <a href="https://github.com/jjacobgreen/projects">GitHub</a>, many of which utilise the <a href="https://www.pygame.org/wiki/about">pygame</a> library.</p>
 
     <p class="subpage">Thanks must be given to <a href="https://shiffman.net/">Daniel Shiffman</a> and his YouTube channel <a href="https://thecodingtrain.com/">'The Coding Train'</a>, from which inspiration for many of these projects is taken. </p>
   </div>
 
-  <div style="padding-bottom: 40px; text-align:center;">
-    <h2>Rocket Golf</h2>
-    <p class="subpage">A physics-based arcade game - launch the rocket to reach the black hole.</p>
-    <p style="font-size:calc(10px + 0.5vw); font-style:italic; color: var(--main-blue);">Set the trajectory and launch power with the mouse and hit space bar for a boost. Use gravity to slingshot around the planets without crashing into them. <br>(Work in progress - feel free to report any bugs through the <a href="contact.html">contact</a> page)</p>
-    <div id="game_div" style="padding-bottom: 5vh"></div>
+  <div class="midnav" style="text-align: center; padding-bottom: 40px;">
+    <ul style="line-height: 300%;">
+      <li><a class="midnav" href="projects/games/rocket_golf.html"><i class="fas fa-gamepad"></i><br>games</a></li>
+      <li><br></li>
+      <li><a class="midnav" href="projects/animations/animations.html"><i class="fas fa-pause"></i> <i class="fas fa-play"></i><br>animations</a></li>
+    </ul>
   </div>
 
-  <!-- <div style="padding-bottom: 40px; text-align:center;">
-    <h2>3D Supershapes</h2>
-    <p class="subpage">An animation of evolving supershapes.</p>
-    <p style="font-size:calc(10px + 0.5vw); font-style:italic; color: var(--main-blue);">Supershapes follow a formula <a href="http://paulbourke.net/geometry/supershape/">(credit: Paul Bourke)</a> that extends spheres, circles and superellipses to complex 3D shapes. The result is plotted in 3D using WEBGL. This is my implementation in JavaScript of a similar project by Daniel Shiffman. <br>(Work in progress (especially the lighting!) - feel free to report any bugs through the <a href="contact.html">contact</a> page)</p>
-    <div id="supershapes_div" style="padding-bottom: 5vh"></div>
+  <!-- <div style="text-align: center; padding-top: calc(40px + 4vw); font-size: calc(20px + 2vw); line-height: 200%">
+    <p class="subpage"><a class="midnav" href="projects/games/rocket_golf.html"><i class="fas fa-gamepad"></i><br>games</a></p>
+    <p class="subpage"><a class="midnav" href="projects/animations/animations.html"><i class="fas fa-pause"></i> <i class="fas fa-play"></i><br>animations</a></p>
   </div> -->
 
-  <div style="padding-bottom: 40px; text-align:center;">
-    <h1 class="subpage">more coming soon</h1>
-  </div>
 
   <!-- Copyright Footer -->
   <footer class="subpage">
