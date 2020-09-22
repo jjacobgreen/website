@@ -4,9 +4,8 @@
 <!-- Set up CSS styles -->
 
 <head>
-  <title>contact</title>
-  <link type="text/css" rel="stylesheet" href="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/styles.css">
-  <!-- Sets initial zoom upon loading to match device -->
+  <title>projects</title>
+  <link type="text/css" rel="stylesheet" href="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/styles.css"> <!-- Sets initial zoom upon loading to match device -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/favicon/favicon-32x32.png">
@@ -16,12 +15,15 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
-  <!-- Icons from fontawesome -->
-  <script src="https://kit.fontawesome.com/21ae3664d8.js" crossorigin="anonymous"></script>
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+
+  <!-- Supershapes -->
+  <script src="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/supershape/supershape.js"></script>
 </head>
 
 
-<body class="subpage" style="text-align:center;">
+<body class="subpage">
 
   <!-- Name pixel art -->
   <div style="text-align:center;">
@@ -34,21 +36,28 @@
   <div class="topnav">
     <ul class="topnav">
       <li><a class="topnav inactive" href="about.html">about</a></li>
-      <li><a class="topnav inactive" href="projects.html">projects</a></li>
+      <li><a class="topnav active" href="projects.html">projects</a></li>
       <li><a class="topnav inactive" href="masters.html">master's thesis</a></li>
-      <li><a class="topnav active" href="contact.html">contact</a></li>
+      <li><a class="topnav inactive" href="contact.html">contact</a></li>
     </ul>
   </div>
 
   <!-- Body text -->
-  <div style="padding: 5vw">
-    <h1 class="subpage">contact</h1>
-    <p class="subpage"><i class="fas fa-map-marker-alt"></i><br>london, nw11</p>
-    <p class="subpage"><i class="fab fa-linkedin"></i><br><a href="https://www.linkedin.com/in/jacob-h-green/">linkedin</a></p>
-    <p class="subpage"><i class="fas fa-envelope"></i><br><a href="mailto:jacob.hugo.green@gmail.com">jacob.hugo.green@gmail.com</a></p>
-    <p class="subpage"><i class="fab fa-github"></i><br><a href="https://github.com/jjacobgreen/projects">GitHub</a></p>
-
+  <div style="padding-bottom: 10px">
+    <h1 class="subpage">animations</h1>
   </div>
+
+  <div style="padding-bottom: 40px; text-align:center;">
+    <h2>3D Supershapes</h2>
+    <p class="subpage">An animation of evolving supershapes.</p>
+    <p style="font-size:calc(10px + 0.5vw); font-style:italic; color: var(--main-blue);">Supershapes follow a formula <a href="http://paulbourke.net/geometry/supershape/">(credit: Paul Bourke)</a> that extends spheres, circles and superellipses to complex 3D shapes. The result is plotted in 3D using WEBGL. This is my implementation in JavaScript of a similar project by Daniel Shiffman. <br>(Work in progress (especially the lighting!) - feel free to report any bugs through the <a href="contact.html">contact</a> page)</p>
+    <div id="supershapes_div" style="padding-bottom: 5vh"></div>
+  </div>
+
+  <div style="padding-bottom: 40px; text-align:center;">
+    <h1 class="subpage">more coming soon</h1>
+  </div>
+
   <!-- Copyright Footer -->
   <footer class="subpage">
     <p>&copy; Jacob Green 2020</p>
