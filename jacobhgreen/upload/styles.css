@@ -25,6 +25,7 @@ body.subpage {
   padding: calc(10px + 1vw);
   text-align: justify;
   text-justify: inter-word;
+  margin: 0 auto;
 }
 
 /* When less than 400px */
@@ -157,7 +158,6 @@ ul.topnav {
   text-align: center;
   display: flex;
   justify-content: center;
-  ;
 }
 
 /* Hyperlinked undordered list elements for horizontal navigation bar */
@@ -203,6 +203,16 @@ p a:hover {
   display: inline;
   color: var(--main-green);
   text-decoration: underline;
+}
+
+hr.std {
+  /* Different parameters for different browsers */
+  border: 2px;
+  color: var(--main-green);
+  background-color: var(--main-green);
+  border-color: var(--main-green);
+  border-style: solid;
+  width: 100%;
 }
 
 /* Just to show div boxes */

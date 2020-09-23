@@ -19,11 +19,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
 
   <!-- Supershapes -->
-  <script src="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/supershape/supershape.js"></script>
+  <script src="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/supershape/supershape0.js"></script>
+
+  <!-- Orb waves -->
+  <script src="https://s3.eu-west-2.amazonaws.com/www.jacobhgreen.com/orb/orb0.js"></script>
 </head>
 
 
-<body class="subpage">
+<body class="subpage" style="width: 80%; text-align: center;">
 
   <!-- Name pixel art -->
   <div style="text-align:center;">
@@ -43,18 +46,32 @@
   </div>
 
   <!-- Body text -->
-  <div style="padding-bottom: 10px; text-align:center;">
+  <div style="padding-bottom: 0px;">
     <h1 class="subpage">animations</h1>
   </div>
 
-  <div style="padding-bottom: 40px; text-align:center;">
-    <h2>3D Supershapes</h2>
-    <p class="subpage">An animation of evolving supershapes.</p>
-    <p style="font-size:calc(10px + 0.5vw); font-style:italic; color: var(--main-blue);">Supershapes follow a formula that extends spheres, circles and superellipses to complex 3D shapes <a href="http://paulbourke.net/geometry/supershape/">(credit: Paul Bourke)</a>. The result is plotted in 3D using WEBGL. This is my implementation in JavaScript of a similar project by Daniel Shiffman. (I think the lighting needs work!)</p>
-    <div id="supershapes_div" style="padding-bottom: 5vh"></div>
+  <hr class="std">
+
+  <div style="padding-bottom: 10px;">
+    <h2>Orb Waves</h2>
+    <p class="subpage">An animation of sinusoidally changing cuboids.</p>
+    <p style="font-size:calc(12px + 0.5vw); font-style:italic; color: var(--main-blue);">My recreation of a gif by <a href="https://beesandbombs.tumblr.com/post/149654056864/cube-wave">bees & bombs</a>. Daniel Shiffman's video of his version of this gif was one of his first videos that I watched, and it's been at the back of my mind ever since. Here's my pastel coloured implementation in JavaScript using WEBGL. (Sliders to adjust the rippling coming soon!)</p>
+    <div id="orb_div" style="padding-bottom: 0vh"></div>
   </div>
 
-  <div style="padding-bottom: 40px; text-align:center;">
+  <hr class="std">
+
+  <div style="padding-bottom: 10px;">
+    <h2>3D Supershapes</h2>
+    <p class="subpage">An animation of evolving supershapes.</p>
+    <p style="font-size:calc(12px + 0.5vw); font-style:italic; color: var(--main-blue);">Supershapes follow a formula that extends spheres, circles and superellipses to complex 3D shapes <a href="http://paulbourke.net/geometry/supershape/">(credit: Paul Bourke)</a>. The result is plotted in 3D using WEBGL. This is my implementation in JavaScript of a similar project by Daniel Shiffman. (I think the lighting needs work!)</p>
+    <div id="supershape_div" style="padding-bottom: 0vh"></div>
+  </div>
+
+<hr class="std">
+
+
+  <div style="padding-bottom: 40px;">
     <h1 class="subpage">more coming soon</h1>
   </div>
 
