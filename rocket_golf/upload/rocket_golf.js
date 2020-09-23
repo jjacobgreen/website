@@ -49,9 +49,10 @@ function setup() {
   }
   // Places script within specific div in page!
   canvas.parent('game_div');
+  console.log('setup');
 
   textSize(16);
-  textFont('Courier')
+  textFont('Courier');
   noStroke();
 
   imageMode(CENTER);

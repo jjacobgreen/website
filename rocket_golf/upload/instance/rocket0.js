@@ -1,17 +1,17 @@
 class Rocket {
 
-  constructor(x, y) {
+  constructor(p, x, y) {
     this.start_x = x;
     this.start_y = y;
 
-    this.pos = createVector(this.start_x, this.start_y);
-    this.vel = createVector(0, 0);
-    this.acc = createVector(0, 0);
-    this.force = createVector(0, 0);
-    this.launch_vector = createVector(0, 0);
+    this.pos = p.createVector(this.start_x, this.start_y);
+    this.vel = p.createVector(0, 0);
+    this.acc = p.createVector(0, 0);
+    this.force = p.createVector(0, 0);
+    this.launch_vector = p.createVector(0, 0);
 
     this.diameter = 20;
-    this.mass = pow(this.diameter, mass_power);
+    this.mass = p.pow(this.diameter, p.mass_power);
 
     // Flags
     this.launched = false;
@@ -21,44 +21,46 @@ class Rocket {
 
   }
 
-  launch_sequence() {
+  launch_sequence(p) {
     // Reset if crashed
     this.crashed = false;
+    var launch_velocity_factor = 0.1;
 
     // Launch arrow and sequence
-    var launch_vector = createVector(mouseX - this.pos.x, mouseY - this.pos.y).mult(launch_velocity_factor);
+    console.log(p.launch_velocity_factor)
+    var launch_vector = p.createVector(p.mouseX - this.pos.x, p.mouseY - this.pos.y).mult(launch_velocity_factor);
 
-    if (launch_vector.mag() > max_launch_velocity) {
-      launch_vector.setMag(max_launch_velocity);
+    if (launch_vector.mag() > p.max_launch_velocity) {
+      launch_vector.setMag(p.max_launch_velocity);
     }
 
-    push();
-    stroke(255, 50, 50);
-    strokeWeight(2);
+    p.push();
+    p.stroke(255, 50, 50);
+    p.strokeWeight(2);
     var angle = launch_vector.copy().heading();
 
-    var max_mouse_x = this.pos.x + max_aim * cos(angle);
-    var max_mouse_y = this.pos.y + max_aim * sin(angle);
-    if (dist(this.pos.x, this.pos.y, mouseX, mouseY) < max_aim) {
-      line(this.pos.x, this.pos.y, mouseX, mouseY);
-      push();
-      fill(255, 50, 50);
-      translate(mouseX, mouseY);
-      rotate(angle - PI / 2) //rotates the arrow point
-      triangle(0, 6, -4, -8, 4, -8);
-      pop();
+    var max_mouse_x = this.pos.x + p.max_aim * p.cos(angle);
+    var max_mouse_y = this.pos.y + p.max_aim * p.sin(angle);
+    if (p.dist(this.pos.x, this.pos.y, p.mouseX, p.mouseY) < p.max_aim) {
+      p.line(this.pos.x, this.pos.y, p.mouseX, p.mouseY);
+      p.push();
+      p.fill(255, 50, 50);
+      p.translate(p.mouseX, p.mouseY);
+      p.rotate(angle - p.PI / 2) //rotates the arrow point
+      p.triangle(0, 6, -4, -8, 4, -8);
+      p.pop();
     } else {
-      line(this.pos.x, this.pos.y, max_mouse_x, max_mouse_y);
-      push();
-      fill(255, 50, 50);
-      translate(max_mouse_x, max_mouse_y);
-      rotate(angle - PI / 2) //rotates the arrow point
-      triangle(0, 6, -4, -8, 4, -8);
-      pop();
+      p.line(this.pos.x, this.pos.y, max_mouse_x, max_mouse_y);
+      p.push();
+      p.fill(255, 50, 50);
+      p.translate(max_mouse_x, max_mouse_y);
+      p.rotate(angle - p.PI / 2) //rotates the arrow point
+      p.triangle(0, 6, -4, -8, 4, -8);
+      p.pop();
     }
-    pop();
+    p.pop();
 
-    if (mouseIsPressed && this.mouseOnscreen()) {
+    if (p.mouseIsPressed) {
       this.vel = launch_vector;
       this.launched = true;
       // console.log('launch velocity', rocket.vel.mag());
@@ -66,50 +68,42 @@ class Rocket {
     this.launch_vector = launch_vector.copy();
   }
 
-  mouseOnscreen() {
-    if (mouseX < width && mouseX > 0 && mouseY < height && mouseY > 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  boost() {
-    if (this.boosted == false && keyIsPressed) {
-      this.vel.add(this.vel.normalize().mult(boost_power))
+  boost(p) {
+    if (this.boosted == false && p.keyIsPressed) {
+      this.vel.add(this.vel.normalize().mult(p.boost_power))
       this.boosted = true;
       console.log('boosting');
     }
   }
 
-  update(planets, hole) {
+  update(p, planets, hole) {
     if (this.launched && !this.complete && !this.crashed) {
-      this.apply_gravity(planets, hole);
+      this.apply_gravity(p, planets, hole);
       this.vel.add(this.acc);
       this.pos.add(this.vel);
 
       // Constrain max velocity
-      if (this.vel.mag() > terminal_vel) {
-        this.vel = this.vel.normalize().mult(terminal_vel);
+      if (this.vel.mag() > p.terminal_vel) {
+        this.vel = this.vel.normalize().mult(p.terminal_vel);
       }
     }
   }
 
-  show() {
+  show(p) {
     // fill(255);
     // ellipse(this.pos.x, this.pos.y, this.diameter, this.diameter);
-    push()
-    translate(this.pos.x, this.pos.y)
+    p.push()
+    p.translate(this.pos.x, this.pos.y)
     if (this.launched) {
-      rotate(this.vel.heading() + PI / 2)
+      p.rotate(this.vel.heading() + p.PI / 2)
     } else {
-      rotate(this.launch_vector.heading() + PI / 2)
+      p.rotate(this.launch_vector.heading() + p.PI / 2)
     }
-    image(rocket_img, 0, 0);
-    pop()
+    p.image(rocket_img, 0, 0);
+    p.pop()
   }
 
-  reached_hole(hole) {
+  reached_hole(p, hole) {
     var current_distance = this.pos.dist(hole.pos);
     var collision_distance = (this.diameter + hole.diameter) / 2;
     if (current_distance < collision_distance) {
@@ -118,16 +112,16 @@ class Rocket {
     }
   }
 
-  apply_gravity(planets, hole) {
+  apply_gravity(p, planets, hole) {
     // Reset current acc
     this.acc.set(0, 0);
 
     // Apply hole gravity
     var d = this.pos.dist(hole.pos);
-    var acc = G * hole.mass / pow(d, hole_power);
+    var acc = p.G * hole.mass / p.pow(d, p.hole_power);
     var angle = hole.pos.copy().sub(this.pos).heading();
-    this.acc.x = acc * cos(angle);
-    this.acc.y = acc * sin(angle);
+    this.acc.x = acc * p.cos(angle);
+    this.acc.y = acc * p.sin(angle);
 
     // Apply planet gravity
     for (var i = 0; i < planets.length; i++) {
@@ -135,17 +129,17 @@ class Rocket {
       var planet_pos = planet.pos.copy();
       d = this.pos.dist(planet_pos);
 
-      acc = G * planet.mass / pow(d, inverse_power);
+      acc = p.G * planet.mass / p.pow(d, p.inverse_power);
 
       angle = planet_pos.sub(this.pos).heading();
-      this.acc.x += acc * cos(angle);
-      this.acc.y += acc * sin(angle);
+      this.acc.x += acc * p.cos(angle);
+      this.acc.y += acc * p.sin(angle);
     }
 
   }
 
   // Doesn't always stop on edge of planet when crashed due to moving multiple pixels per frame
-  check_collisions(planets) {
+  check_collisions(p, planets) {
     for (var i = 0; i < planets.length; i++) {
       var planet = planets[i];
       var current_distance = this.pos.dist(planet.pos);
@@ -157,17 +151,17 @@ class Rocket {
     }
   }
 
-  offscreen() {
-    if (this.pos.x + this.diameter / 2 > width ||
+  offscreen(p) {
+    if (this.pos.x + this.diameter / 2 > p.width ||
       this.pos.x - this.diameter / 2 < 0 ||
-      this.pos.y + this.diameter / 2 > height ||
+      this.pos.y + this.diameter / 2 > p.height ||
       this.pos.y - this.diameter / 2 < 0) {
       this.crashed = true;
       return true;
     }
   }
 
-  relaunch() {
+  relaunch(p) {
     // console.log('crash velocity', this.vel.mag());
     for (var i = 0; i < 10000; i++) {
       // console.log('counting')
